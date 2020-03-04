@@ -243,6 +243,15 @@ public class ZipInputStream extends InputStream {
 	              + ". Uncompressed size has to be set for entry of compression type store which is not a directory");
     }
 
+    if (localFileHeader.getCompressionMethod() != CompressionMethod.STORE &&
+    		localFileHeader.getCompressionMethod() != CompressionMethod.DEFLATE &&
+    		localFileHeader.getCompressionMethod() != CompressionMethod.BZIP2 &&    		
+			localFileHeader.getCompressionMethod() != CompressionMethod.LZMA &&
+			localFileHeader.getCompressionMethod() != CompressionMethod.DEFLATE64 &&
+    		localFileHeader.getCompressionMethod() != CompressionMethod.AES_INTERNAL_ONLY) {
+		throw new IOException("Unsuported compression method. code="+localFileHeader.getCompressionMethod().getCode());
+	}
+
   }
 
   private boolean checkIfZip64ExtraDataRecordPresentInLFH(List<ExtraDataRecord> extraDataRecords) {
