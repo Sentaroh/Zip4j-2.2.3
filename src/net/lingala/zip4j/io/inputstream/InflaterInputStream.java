@@ -6,6 +6,8 @@ import java.io.PushbackInputStream;
 import java.util.zip.DataFormatException;
 import java.util.zip.Inflater;
 
+import net.lingala.zip4j.util.InternalZipConstants;
+
 public class InflaterInputStream extends DecompressedInputStream {
 
   private Inflater inflater;
@@ -16,7 +18,7 @@ public class InflaterInputStream extends DecompressedInputStream {
   public InflaterInputStream(CipherInputStream cipherInputStream) {
     super(cipherInputStream);
     this.inflater = new Inflater(true);
-    buff = new byte[512];
+    buff = new byte[InternalZipConstants.BUFF_SIZE];
   }
 
   @Override
