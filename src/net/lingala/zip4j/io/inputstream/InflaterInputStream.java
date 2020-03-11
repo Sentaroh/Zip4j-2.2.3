@@ -29,7 +29,7 @@ public class InflaterInputStream extends DecompressedInputStream {
       return -1;
     }
 
-    return singleByteBuffer[0];
+    return singleByteBuffer[0]&0xff;
   }
 
   @Override

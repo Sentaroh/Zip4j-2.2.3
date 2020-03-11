@@ -24,7 +24,7 @@ class ZipEntryInputStream extends InputStream {
       return -1;
     }
 
-    return singleByteArray[0];
+    return singleByteArray[0]&0xff;
   }
 
   @Override

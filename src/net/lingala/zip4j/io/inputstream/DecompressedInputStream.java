@@ -21,7 +21,7 @@ abstract class DecompressedInputStream extends InputStream {
       return -1;
     }
 
-    return oneByteBuffer[0];
+    return oneByteBuffer[0]&0xff;
   }
 
   @Override

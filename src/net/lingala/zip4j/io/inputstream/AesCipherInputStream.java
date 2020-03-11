@@ -44,7 +44,7 @@ class AesCipherInputStream extends CipherInputStream<AESDecrypter> {
       return -1;
     }
 
-    return singleByteBuffer[0];
+    return singleByteBuffer[0]&0xff;
   }
 
   @Override
