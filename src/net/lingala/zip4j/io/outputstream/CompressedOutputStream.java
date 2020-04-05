@@ -3,7 +3,7 @@ package net.lingala.zip4j.io.outputstream;
 import java.io.IOException;
 import java.io.OutputStream;
 
-abstract class CompressedOutputStream extends OutputStream {
+public abstract class CompressedOutputStream extends OutputStream {
 
   private CipherOutputStream cipherOutputStream;
 
@@ -26,7 +26,7 @@ abstract class CompressedOutputStream extends OutputStream {
     cipherOutputStream.write(b, off, len);
   }
 
-  protected void closeEntry() throws IOException {
+  public void closeEntry() throws IOException {
     cipherOutputStream.closeEntry();
   }
 

@@ -7,7 +7,7 @@ import net.lingala.zip4j.model.ZipParameters;
 import java.io.IOException;
 import java.io.OutputStream;
 
-class NoCipherOutputStream extends CipherOutputStream<NoCipherOutputStream.NoEncrypter> {
+public class NoCipherOutputStream extends CipherOutputStream<NoCipherOutputStream.NoEncrypter> {
 
   public NoCipherOutputStream(ZipEntryOutputStream zipEntryOutputStream, ZipParameters zipParameters, char[] password) throws IOException, ZipException {
     super(zipEntryOutputStream, zipParameters, password);

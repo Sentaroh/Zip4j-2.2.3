@@ -9,7 +9,7 @@ import java.io.OutputStream;
 
 import static net.lingala.zip4j.util.InternalZipConstants.AES_BLOCK_SIZE;
 
-class AesCipherOutputStream extends CipherOutputStream<AESEncrpyter> {
+public class AesCipherOutputStream extends CipherOutputStream<AESEncrpyter> {
 
   private byte[] pendingBuffer = new byte[AES_BLOCK_SIZE];
   private int pendingBufferLength = 0;

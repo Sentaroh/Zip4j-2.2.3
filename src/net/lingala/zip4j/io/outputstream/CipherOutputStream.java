@@ -23,7 +23,7 @@ import net.lingala.zip4j.model.ZipParameters;
 import java.io.IOException;
 import java.io.OutputStream;
 
-abstract class CipherOutputStream<T extends Encrypter> extends OutputStream {
+public abstract class CipherOutputStream<T extends Encrypter> extends OutputStream {
 
   private ZipEntryOutputStream zipEntryOutputStream;
   private T encrypter;

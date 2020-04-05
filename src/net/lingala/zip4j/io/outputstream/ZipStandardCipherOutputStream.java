@@ -8,7 +8,7 @@ import net.lingala.zip4j.util.Zip4jUtil;
 import java.io.IOException;
 import java.io.OutputStream;
 
-class ZipStandardCipherOutputStream extends CipherOutputStream<StandardEncrypter> {
+public class ZipStandardCipherOutputStream extends CipherOutputStream<StandardEncrypter> {
 
   public ZipStandardCipherOutputStream(ZipEntryOutputStream outputStream, ZipParameters zipParameters, char[] password) throws IOException, ZipException {
     super(outputStream, zipParameters, password);

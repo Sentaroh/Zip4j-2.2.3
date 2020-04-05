@@ -3,7 +3,7 @@ package net.lingala.zip4j.io.outputstream;
 import java.io.IOException;
 import java.io.OutputStream;
 
-class ZipEntryOutputStream extends OutputStream {
+public class ZipEntryOutputStream extends OutputStream {
 
   private long numberOfBytesWrittenForThisEntry = 0;
   private OutputStream outputStream;

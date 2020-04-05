@@ -23,7 +23,7 @@ import java.util.zip.Deflater;
 
 import static net.lingala.zip4j.util.InternalZipConstants.BUFF_SIZE;
 
-class DeflaterOutputStream extends CompressedOutputStream {
+public class DeflaterOutputStream extends CompressedOutputStream {
 
   private byte[] buff = new byte[BUFF_SIZE];
   protected Deflater deflater;
