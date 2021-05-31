@@ -47,10 +47,13 @@ public class AESDecrypter implements Decrypter {
     this.password = password;
     iv = new byte[AES_BLOCK_SIZE];
     counterBlock = new byte[AES_BLOCK_SIZE];
-    init(salt, passwordVerifier);
+//    init(salt, passwordVerifier);
+    init(salt, passwordVerifier, password, aesExtraDataRecord);
   }
 
-  private void init(byte[] salt, byte[] passwordVerifier) throws ZipException {
+  private void init(byte[] salt, byte[] passwordVerifier, char[] password, AESExtraDataRecord aesExtraDataRecord)
+	      throws ZipException {
+
     AesKeyStrength aesKeyStrength = aesExtraDataRecord.getAesKeyStrength();
 
     if (password == null || password.length <= 0) {

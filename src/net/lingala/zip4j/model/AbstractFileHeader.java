@@ -67,13 +67,13 @@ public abstract class AbstractFileHeader extends ZipHeader {
     this.crc = crc;
   }
 
-  public byte[] getCrcRawData() {
-    return crcRawData;
-  }
-
-  public void setCrcRawData(byte[] crcRawData) {
-    this.crcRawData = crcRawData;
-  }
+//  public byte[] getCrcRawData() {
+//    return crcRawData;
+//  }
+//
+//  public void setCrcRawData(byte[] crcRawData) {
+//    this.crcRawData = crcRawData;
+//  }
 
   public long getCompressedSize() {
     return compressedSize;

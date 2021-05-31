@@ -10,13 +10,15 @@ import java.io.OutputStream;
 
 public class ZipStandardCipherOutputStream extends CipherOutputStream<StandardEncrypter> {
 
-  public ZipStandardCipherOutputStream(ZipEntryOutputStream outputStream, ZipParameters zipParameters, char[] password) throws IOException, ZipException {
+	public ZipStandardCipherOutputStream(ZipEntryOutputStream outputStream, ZipParameters zipParameters, char[] password)
+		      throws IOException {
     super(outputStream, zipParameters, password);
   }
 
   @Override
-  protected StandardEncrypter initializeEncrypter(OutputStream outputStream, ZipParameters zipParameters, char[] password) throws IOException, ZipException {
-    long key = getEncryptionKey(zipParameters);
+  protected StandardEncrypter initializeEncrypter(OutputStream outputStream, ZipParameters zipParameters,
+          char[] password) throws IOException {
+	long key = getEncryptionKey(zipParameters);
     StandardEncrypter encrypter = new StandardEncrypter(password, key);
     writeHeaders(encrypter.getHeaderBytes());
     return encrypter;

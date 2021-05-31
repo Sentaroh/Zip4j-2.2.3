@@ -162,11 +162,13 @@ public class ZipInputStream extends InputStream {
 
       return readLen;
     } catch (IOException e) {
-      if (e.getCause() != null && e.getCause() instanceof DataFormatException
-          && isEncryptionMethodZipStandard(localFileHeader)) {
-        throw new ZipException(e.getMessage(), e.getCause(), ZipException.Type.WRONG_PASSWORD);
-      }
-
+//      if (e.getCause() != null && e.getCause() instanceof DataFormatException
+//          && isEncryptionMethodZipStandard(localFileHeader)) {
+//        throw new ZipException(e.getMessage(), e.getCause(), ZipException.Type.WRONG_PASSWORD);
+//      }
+      if (isEncryptionMethodZipStandard(localFileHeader)) {
+          throw new ZipException(e.getMessage(), e.getCause(), ZipException.Type.WRONG_PASSWORD);
+        }
       throw e;
     }
   }

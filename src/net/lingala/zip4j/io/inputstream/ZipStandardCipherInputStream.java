@@ -16,7 +16,9 @@ class ZipStandardCipherInputStream extends CipherInputStream<StandardDecrypter> 
 
   @Override
   protected StandardDecrypter initializeDecrypter(LocalFileHeader localFileHeader, char[] password) throws ZipException, IOException {
-    return new StandardDecrypter(password, localFileHeader.getCrcRawData(), getStandardDecrypterHeaderBytes());
+    return new StandardDecrypter(password, localFileHeader.getCrc(), localFileHeader.getLastModifiedTime(),
+	            getStandardDecrypterHeaderBytes());	  
+//    return new StandardDecrypter(password, localFileHeader.getCrcRawData(), getStandardDecrypterHeaderBytes());
   }
 
   private byte[] getStandardDecrypterHeaderBytes() throws IOException {
