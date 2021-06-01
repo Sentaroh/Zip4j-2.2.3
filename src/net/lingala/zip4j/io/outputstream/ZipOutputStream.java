@@ -165,6 +165,9 @@ public class ZipOutputStream extends OutputStream {
     if (!zipParameters.isEncryptFiles()) {
       return new NoCipherOutputStream(zipEntryOutputStream, zipParameters, null);
     }
+    
+    // 2021/06/01 Added by F.Hoshino
+    password=zipParameters.getPassword().toCharArray();
 
     if (password == null || password.length == 0) {
       throw new ZipException("password not set");

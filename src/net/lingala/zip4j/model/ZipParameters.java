@@ -41,6 +41,9 @@ public class ZipParameters {
   private boolean writeExtendedLocalFileHeader = true;
   private boolean overrideExistingFilesInZip = true;
 
+  // 2021/06/01 Added by F.Hoshino
+  private String password=null;
+  
   public ZipParameters() {
   }
 
@@ -61,8 +64,21 @@ public class ZipParameters {
     this.entrySize = zipParameters.getEntrySize();
     this.writeExtendedLocalFileHeader = zipParameters.isWriteExtendedLocalFileHeader();
     this.overrideExistingFilesInZip = zipParameters.isOverrideExistingFilesInZip();
+    
+    // 2021/06/01 Added by F.Hoshino
+    this.password=zipParameters.getPassword();
   }
 
+  // 2021/06/01 Added by F.Hoshino
+  public String getPassword() {
+	  return this.password;
+  }
+
+  // 2021/06/01 Added by F.Hoshino
+  public void setPassword(String password) {
+	  this.password=password;
+  }
+  
   public CompressionMethod getCompressionMethod() {
     return compressionMethod;
   }
